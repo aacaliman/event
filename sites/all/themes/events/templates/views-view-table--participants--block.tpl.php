@@ -1,5 +1,5 @@
 <?php
-include('functions.php');
+include_once('functions.php');
 $muzicaString = '';
 $sportString = '';
 // pentru testare, scurtam array-ul la 10 elemente
@@ -22,7 +22,7 @@ $users = array_slice($rows, 0, 10); ?>
 
 <div class="interese-comune">
     <h3>Interese Comune</h3>
-    <?php // $statistics = getStatistics($muzicaString, $sportString); ?>
+    <?php $statistics = getStatistics($muzicaString, $sportString); ?>
     <table>
         <tr>
             <td>80%</td><td>Muzica Rock</td>

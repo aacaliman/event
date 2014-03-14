@@ -7,5 +7,8 @@
 
 function getStatistics($muzicaString, $sportString)
 {
-    return 'functioneaza';
+    $stringComplet = $muzicaString . ' , ' . $sportString;
+    $categorii = explode(',', $sportString);
+
+//    var_dump($categorii); die();
 }
