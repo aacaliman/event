@@ -30,7 +30,7 @@ h2 a {
 	border: none;
 	padding: 0px;
 }
-	
+
 .field-name-field-titlu-articol-pagina {
 	font-family: 'Eurostil', Arial;
 	color: #333;
@@ -83,7 +83,7 @@ h2 a {
 #footer-wrapper {
 	height: 200px;
 	color: #000;
-	clear: both; 
+	clear: both;
 }
 
 
@@ -91,4 +91,7 @@ div.error a {
     color: #8C2E0B;
     text-decoration: underline;
 }
+
+.poza-user {
+    float:left;
 }
