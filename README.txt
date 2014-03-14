@@ -1,7 +1,7 @@
 
 CONTENTS OF THIS FILE
 ---------------------
-BLA BLA BLA
+BLA BLA BLA DA DA DA
  * About Drupal
  * Configuration and features
  * Installation profiles
