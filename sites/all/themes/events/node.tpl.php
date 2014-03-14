@@ -1,5 +1,4 @@
 <?php
-
 /**
  * @file
  * Bartik's theme implementation to display a node.
@@ -77,7 +76,6 @@
  * @see template_preprocess_node()
  * @see template_process()
  */
-
 //dsm($content);
 //echo $node->body['und']['0']['value'];
 ?>
@@ -85,7 +83,11 @@
     <div class="imagine-eveniment"><?php print render($content['field_picture']); ?></div>
 </div>
 <div class="col2">
-    <div class="titlu-eveniment"><?php echo $title; ?></div>
+    <div class="titlu-eveniment">
+        <h2<?php print $title_attributes; ?>>
+            <a href="<?php print $node_url; ?>"><?php print $title; ?></a>
+        </h2>
+    </div>
     <table>
         <tr>
             <td>Organizat de: </td>
@@ -93,19 +95,20 @@
         </tr>
         <tr>
             <td>Data / Ora: </td>
-            <td><div class="data-eveniment"><?php echo $content['field_event_date'][0]['#markup'];?></div></td>
+            <td><div class="data-eveniment"><?php echo $content['field_event_date'][0]['#markup']; ?></div></td>
         </tr>
         <tr>
             <td>Locatie: </td>
-            <td><div class="locatie-eveniment"><?php echo $content['field_location']['#items'][0]['name'];?></div></td>
+            <td><div class="locatie-eveniment"><?php echo $content['field_location']['#items'][0]['name']; ?></div></td>
         </tr>
     </table>
 </div>
 <div class="col3">
     <div class="participanti">
-        <?php $rightSidebar = views_embed_view('participants', 'block'); print $rightSidebar; ?>
+<?php $rightSidebar = views_embed_view('participants', 'block');
+print $rightSidebar; ?>
     </div>
     <div class="locatie-eveniment">
-        <?php print render($content['field_location']);?>
+        <?php print render($content['field_location']); ?>
     </div>
 </div>
