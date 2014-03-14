@@ -1,0 +1,20 @@
+name = Events Theme
+description = Events Theme
+core = 7.x
+engine = phptemplate
+
+regions[header] = Header
+regions[content] = Content
+regions[footer] = Footer
+regions[sub-footer] = Sub Footer
+
+stylesheets[all][] = css/reset.css
+stylesheets[all][] = css/general.css
+stylesheets[all][] = css/style.css
+
+scripts[] = scripts/scripts.js
+
+features[] = name
+features[] = main_menu
+features[] = logo
+features[] = slogan

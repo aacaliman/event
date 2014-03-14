@@ -1,0 +1,744 @@
+/* ---------------------------------
+	general
+--------------------------------- */
+html {
+	background: #e7ebf2;
+	margin: 0;
+	padding: 0;
+	overflow-y: scroll;
+	}
+
+body{
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	font-size: 12px;
+    line-height: 14px;
+	color: #646464;
+	font-family: Arial;
+	}
+
+/* ---------------------------------
+	basic css
+--------------------------------- */
+/*#content a {
+	color: #4187E5;
+	font-weight: bold;
+}*/
+
+select,img,a,input {
+	outline: none;
+}
+
+a:hover,
+a:active {
+  outline: 0;
+}
+
+sup {top: -0.5em;}
+sub {bottom: -0.25em;}
+
+.hide-text {
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+}
+
+
+/* ---------------------------------
+	widths
+--------------------------------- */
+
+.width-10 {
+	width: 10%;
+}
+
+.width-20 {
+	width: 20%;
+}
+
+.width-30 {
+	width: 30%;
+}
+
+.width-40 {
+	width: 40%;
+}
+
+.width-50 {
+	width: 50%;
+}
+
+.width-60 {
+	width: 60%;
+}
+
+.width-70 {
+	width: 70%;
+}
+
+.width-80 {
+	width: 80%;
+}
+
+.width-90 {
+	width: 90%;
+}
+
+.width-100 {
+	width: 100%;
+}
+
+
+/* ---------------------------------
+	positions
+--------------------------------- */
+.float-left {
+	float: left;
+}
+
+.float-right {
+	float: right;
+}
+
+.clear {
+	clear: both!important;
+}
+
+.inline-block {
+	display: inline-block;
+	*display: inline;
+}
+
+
+/* ---------------------------------
+	spacers
+--------------------------------- */
+.spacer-10 {
+	width: 100%;
+	margin: 10px 0;
+	content:'&nbsp;';
+}
+
+.spacer-20 {
+	width: 100%;
+	margin: 20px 0;
+	content:'&nbsp;';
+}
+
+.spacer-30 {
+	width: 100%;
+	margin: 30px 0;
+	content:'&nbsp;';
+}
+
+.spacer-40 {
+	width: 100%;
+	margin: 40px 0;
+	content:'&nbsp;';
+}
+
+.spacer-50 {
+	width: 100%;
+	margin: 50px 0;
+	content:'&nbsp;';
+}
+
+.spacer-top-10 {
+	width: 100%;
+	margin: 10px 0 0 0;
+	content:'&nbsp;';
+}
+
+.spacer-top-20 {
+	width: 100%;
+	margin: 20px 0 0 0;
+	content:'&nbsp;';
+}
+
+.spacer-top-30 {
+	width: 100%;
+	margin: 30px 0 0 0;
+	content:'&nbsp;';
+}
+
+.spacer-top-40 {
+	width: 100%;
+	margin: 40px 0 0 0;
+	content:'&nbsp;';
+}
+
+.spacer-top-50 {
+	width: 100%;
+	margin: 50px 0 0 0;
+	content:'&nbsp;';
+}
+
+.spacer-bottom-10 {
+	width: 100%;
+	margin: 0 0 10px 0;
+	content:'&nbsp;';
+}
+
+.spacer-bottom-20 {
+	width: 100%;
+	margin: 0 0 20px 0;
+	content:'&nbsp;';
+}
+
+.spacer-bottom-30 {
+	width: 100%;
+	margin: 0 0 30px 0;
+	content:'&nbsp;';
+}
+
+.spacer-bottom-40 {
+	width: 100%;
+	margin: 0 0 40px 0;
+	content:'&nbsp;';
+}
+
+.spacer-bottom-50 {
+	width: 100%;
+	margin: 0 0 50px 0;
+	content:'&nbsp;';
+}
+
+/* ---------------------------------
+	widths
+--------------------------------- */
+.width-10 {
+	width: 10%;
+}
+
+.width-20 {
+	width: 20%;
+}
+
+.width-30 {
+	width: 30%;
+}
+
+.width-40 {
+	width: 40%;
+}
+
+.width-60 {
+	width: 60%;
+}
+
+.width-70 {
+	width: 70%;
+}
+
+.width-80 {
+	width: 80%;
+}
+
+.width-90 {
+	width: 90%;
+}
+
+.width-100 {
+	width: 100%;
+}
+
+/* ---------------------------------
+	fonts
+--------------------------------- */
+.text-strong {
+	font-weight: bold!important
+}
+
+.no-decoration {
+	text-decoration: none!important;
+}
+
+.text-left {
+	text-align: left;
+}
+
+.text-center {
+	text-align: center;
+}
+
+.text-right {
+	text-align: right;
+}
+
+/* 12px = 100% - base font size, from body */
+.size9 {
+	font-size: 75%!important;
+}
+
+.size10 {
+	font-size: 83.3%!important;
+}
+
+.size11 {
+	font-size: 91.6%!important;
+}
+
+.size12 {
+	font-size: 100%!important;
+}
+
+.size13 {
+	font-size: 108%!important;
+}
+
+.size14 {
+	font-size: 116.6%!important;
+}
+
+.size15 {
+	font-size: 125%!important;
+}
+
+.size16 {
+	font-size: 133.3%!important;
+}
+
+.size18 {
+	font-size: 150%!important;
+}
+
+.size20 {
+	font-size: 166.6%!important;
+}
+
+.size22 {
+	font-size: 183.3%!important;
+}
+
+.size24 {
+	font-size: 200%!important;
+}
+
+.size26 {
+	font-size: 216.6%!important;
+}
+
+.size28 {
+	font-size: 233.3%!important;
+}
+
+.size30 {
+	font-size: 250%!important;
+}
+
+.size32 {
+	font-size: 266.6%!important;
+}
+
+.size36 {
+	font-size: 300%!important;
+}
+
+.size40 {
+	font-size: 333.3%!important;
+}
+
+/* ---------------------------------
+	controll units - only for testing pusposes
+--------------------------------- */
+.red {
+	background: red;
+}
+
+.blue {
+	background: blue;
+}
+
+.green {
+	background: green;
+}
+
+/* ---------------------------------
+	visibility
+--------------------------------- */
+.semi-transparent {
+	opacity: 0.5;
+	filter:alpha(opacity=50);
+	}
+	
+.show {
+	display: block!important;
+}
+
+.hide {
+	display: none!important;
+}
+
+.invisible {
+  visibility: hidden;
+}
+
+/* ---------------------------------
+	fonts
+--------------------------------- */	
+@font-face {
+	font-family: 'FontX'; 
+	src: url('../fonts/fontName.eot');
+}
+
+@font-face{
+	font-family: 'FontX';
+	src: url('../fonts/fontName.ttf');
+	}
+
+.fontX {
+	font-family: 'FontX', Arial;
+}
+	
+/* ---------------------------------
+	colors
+--------------------------------- */
+.white-text {
+	color: #fff!important;
+}
+
+/* ---------------------------------
+	inputs
+--------------------------------- */
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  cursor: pointer;
+  -webkit-appearance: button;
+}
+
+button,
+input,
+select,
+textarea {
+  margin: 0;
+  font-size: 100%;
+  vertical-align: middle;
+}
+
+button.roudend,
+input.rounded,
+textarea.rounded {
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+}
+
+input[disabled],
+select[disabled],
+textarea[disabled],
+input[readonly],
+select[readonly],
+textarea[readonly] {
+	cursor: not-allowed;
+	background-color: #eeeeee;
+}
+
+
+.input-mini {
+  width: 60px;
+}
+
+.input-small {
+  width: 90px;
+}
+
+.input-medium {
+  width: 150px;
+}
+
+.input-large {
+  width: 210px;
+}
+
+.input-xlarge {
+  width: 270px;
+}
+
+.input-xxlarge {
+  width: 530px;
+}
+
+/* ---------------------------------
+	icons
+--------------------------------- */
+
+[class^='icon-'],
+[class*='icon-'] {
+	background-image: url("../images/icons-sprite.png");
+}
+
+.icon-edit {
+	background-position: 0 0;
+}
+
+
+.icon-trash {
+	background-position: -25px 0;
+}
+
+/* ---------------------------------
+	tables
+--------------------------------- */
+table {
+	max-width: 100%;
+	background-color: transparent;
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* ---------------------------------
+	custom dropdown
+--------------------------------- */
+
+a.ui-selectmenu {
+	width: 178px;
+	text-decoration: none;
+}
+
+.ui-selectmenu{
+	display:block;
+	display:inline-block;
+	position:relative;
+	overflow:hidden;
+	border:1px solid #B9B9B9;
+	text-decoration:none;
+	vertical-align:middle;
+	background:#FFF;
+	zoom:1;
+	height: 22px!important;
+}
+
+.ui-selectmenu-icon{
+	display:block;
+	position:absolute;
+	top:50%;
+	right:6px;
+	width:9px;
+	height:5px;
+	overflow:hidden;
+	margin-top:-3px;
+	text-indent:-9999em;
+}
+
+.ui-selectmenu-menu{
+	display:none;
+	position:absolute;
+	top:0;
+	z-index:1005;
+	margin-top:-1px;
+	border:1px solid #B9B9B9;
+	border-top:0;
+	padding:0;
+	color:#5D5D5D;
+	background:#FFF;
+}
+
+.ui-selectmenu-menu ul,
+ul.ui-autocomplete {
+	overflow:auto;
+	overflow-y:auto;
+	overflow-x:hidden;
+	margin:0;
+	padding:0;
+	list-style:none;
+}
+
+.ui-selectmenu-menu li,
+.ui-autocomplete li {
+	display:block;
+	margin:0;
+	padding:0;
+}
+
+.ui-selectmenu-open{
+	display:block;
+}
+
+.ui-selectmenu-status,
+.ui-selectmenu-menu li a,
+.ui-autocomplete li a {
+	display:block;
+	padding:2px 21px 2px 4px;
+	outline:none;
+	color:#5D5D5D;
+	text-decoration:none;
+}
+
+.ui-selectmenu-menu li a,
+.ui-autocomplete li a {
+	color:#5D5D5D;
+	text-decoration: none;
+}
+
+.ui-selectmenu-menu li a:hover {
+	color:#5D5D5D;
+	text-decoration: none;
+}
+
+.ui-selectmenu-open li.ui-selectmenu-item-selected a {
+	color:#5D5D5D;
+	background:#E6E6E6;
+}
+
+.ui-selectmenu-menu li.ui-state-hover a,
+.ui-selectmenu-open li.ui-selectmenu-item-focus a {
+	color:#FFF;
+	background:#E91C09;
+}
+
+.ui-state-disabled,
+.ui-selectmenu-menu li.ui-state-disabled a {
+	border-color:#DEDEDE;
+	color:#AAA;
+	cursor:default;
+}
+
+.ui-selectmenu-menu .ui-selectmenu-group .ui-selectmenu-group-label {
+	font-weight:bold;
+}
+
+.ui-selectmenu-menu .ui-selectmenu-group ul {
+	margin:0;
+	padding:0;
+	list-style:none;
+}
+
+a#selectPunctConsum-button.ui-selectmenu {
+	width: 257px;
+	text-decoration: none;
+}
+
+ul#selectPunctConsum-menu {
+	width:257px;
+}
+
+.ui-autocomplete {
+	position: relative;
+	border: 1px solid #e6e6e6;
+}
+
+/* ---------------------------------
+	custom checkboxes and radio buttons
+--------------------------------- */
+
+.custom-checkbox {
+	*display: inline!important;
+	display: inline-block;
+	position: relative;
+	width: 20px;
+	height: 20px;
+}
+
+.custom-checkbox input {
+	opacity: 0;
+	filter:alpha(opacity=0); /* For IE8 and earlier */
+}
+
+.custom-checkbox label,
+.custom-checkbox .ckbox {
+	position: absolute;
+	left: 0;
+	top: 4px;
+	width: 20px;
+	height: 20px;
+	margin-left: 0px;
+	display: inline-block;
+	background: #cc0000;
+    padding: 0 0 0 0;
+    text-align: left;
+}
+
+.custom-checkbox .ckbox.checked,
+.custom-checkbox label.checked {
+	background: #333333;
+}
+
+/* ---------------------------------
+	custom file input
+--------------------------------- */
+
+.customfile { 
+	width: 265px; 
+	cursor: hand; 
+	padding: 0px; 
+	position: relative; 	
+	}
+
+.customfile-button,
+.customfile-hover .customfile-button,
+.customfile-focus .customfile-button
+ { 
+	border: 1px solid #999;
+	background: url('../images/button-bg.png') no-repeat 0 0 transparent;
+	color: #000;
+	font-weight: normal;
+	float: right;
+	width: 79px;
+	height: 19px;
+	padding: 2px 0 0 0;
+	text-align: center;
+	text-decoration: none;
+	font-size: 12px;
+	line-height: 16px;
+	border: 0px;
+	}
+
+fieldset	{
+	padding: 0 20px!important;
+	width: 250px!important;
+	background: transparent;
+	margin-top: 0px;
+	font-size: 17px;
+	color: red;
+}
+ 
+.customfile-input {
+	position: absolute;
+	height: 21px;
+	top: 0px!important;
+	left: 0px!important;
+	cursor: pointer;
+	background: transparent;
+	border: 0;
+	opacity: 0;
+	-moz-opacity: 0;
+	filter:progid:DXImageTransform.Microsoft.Alpha(opacity=0);
+	z-index: 999;
+	width: 265px;
+}
+
+.customfile-disabled {
+	opacity: .5;
+	filter:progid:DXImageTransform.Microsoft.Alpha(opacity=0);
+	cursor: default;
+}
+
+.customfile-feedback {
+	display: block;
+	margin: 0 0 0 0;
+	font-size: 12px;
+	color: #000;
+	padding: 4px 0 0 5px;
+	border: 1px solid #bebebe;
+	width: 166px;
+	height: 16px;
+	background: url('../images/input-bg.png') no-repeat 0 0 transparent;
+	overflow: hidden;
+}
+
+.customfile-feedback-populated {
+	color: #000;
+	font-style: normal;
+	font-weight: normal;
+	padding-left: 5px;
+	font-size: 11px!important;
+}
+
+.customfile .customfile-feedback.error { 
+	border: 1px solid #b52320;
+	color: #b52320;
+}
