@@ -1,0 +1,4 @@
+name = Attend Rules Modules
+description = Add rules for Attend Flag.
+core = 7.x
+package = Custom

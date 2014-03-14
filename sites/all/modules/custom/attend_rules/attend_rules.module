@@ -1,0 +1,22 @@
+<?php 
+
+/**
+ *
+ * Attend Rules module.
+ *
+ */
+
+function attend_rules_rules_action_info() {
+    $actions = array(
+        'attend_rules_action_hello_world' => array(
+            'label' => 'Print Hello World on page',
+            'group' => 'Data'
+        ) 
+    );
+    
+    return $actions;
+}
+
+function attend_rules_action_hello_world() {
+    dsm($node->field_data_field_add_user);
+}
