@@ -10,8 +10,8 @@ $users = array_slice($rows, 0, 10); ?>
 <div class="poze-participanti">
     <?php
     foreach ($users as $user) :
-        $muzicaString .= ',' . $user['field_muzica'];
-        $sportString .= ',' . $user['field_sport'];
+        $muzicaString .= $user['field_muzica'] . ',';
+        $sportString .= $user['field_sport'] . ',';
         ?>
         <div class="poza-user">
             <?php echo $user['field_poza']; ?>
@@ -22,17 +22,14 @@ $users = array_slice($rows, 0, 10); ?>
 
 <div class="interese-comune">
     <h3>Interese Comune</h3>
-    <?php $statistics = getStatistics($muzicaString, $sportString); ?>
+    <?php $categorii = getStatistics($muzicaString, $sportString); ?>
+    <p>Din <?php echo count($users); ?> persoane care participa:</p>
     <table>
+        <?php foreach ($categorii as $label => $value): ?>
         <tr>
-            <td>80%</td><td>Muzica Rock</td>
+            <td><strong><?php echo $value; ?></strong> sunt interesati de <strong><?php echo $label; ?></strong></td>
         </tr>
-        <tr>
-            <td>60%</td><td>Ciclism</td>
-        </tr>
-        <tr>
-            <td>35%</td><td>Sah</td>
-        </tr>
+        <?php endforeach; ?>
     </table>
 </div>
 

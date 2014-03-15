@@ -7,8 +7,11 @@
 
 function getStatistics($muzicaString, $sportString)
 {
-    $stringComplet = $muzicaString . ' , ' . $sportString;
-    $categorii = explode(',', $sportString);
+    $stringComplet = $muzicaString . $sportString;
+    $categorii = array_map('trim',explode(",",$sportString));
+    $categorii = array_filter($categorii, 'strlen' );
+    $categorii = array_count_values($categorii);
+    arsort($categorii);
 
-//    var_dump($categorii); die();
+    return array_splice($categorii, 0, 3);
 }
