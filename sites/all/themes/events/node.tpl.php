@@ -76,24 +76,30 @@
  * @see template_preprocess_node()
  * @see template_process()
  */
+drupal_add_js('http://code.highcharts.com/highcharts.js', 'external');
+drupal_add_js('http://code.highcharts.com/modules/exporting.js', 'external');
 include_once('functions.php');
+global $base_url;
+
 $muzicaString = '';
 $sportString = '';
 
 $users = isset($node->field_event_user['und']) ? $node->field_event_user['und'] : '';
 $totalUseri = count($users);
 if ($users) {
-    $field_muzica = field_get_items('user', $users[0]['entity'], 'field_muzica');
+    foreach ($users as $userArray) {
+    $field_muzica = field_get_items('user', $userArray['entity'], 'field_muzica');
     if (!empty($field_muzica)) {
         foreach ($field_muzica as $fieldArray) {
             $muzicaString .= $fieldArray['value'] . ',';
         }
     }
+    $field_sport = field_get_items('user', $userArray['entity'], 'field_sport');
     if (!empty($field_sport)) {
-        $field_sport = field_get_items('user', $users[0]['entity'], 'field_sport');
         foreach ($field_sport as $fieldArray) {
             $sportString .= $fieldArray['value'] . ',';
         }
+    }
     }
 }
 ?>
@@ -103,8 +109,7 @@ if ($users) {
         <p class='bold-title'><a href="<?php print $node_url; ?>"><?php print $title; ?></a></p>
         <p class="bold-subtitle">Organizat de:<p> <p class='simpleText'><?php echo $name; ?></p>
         <p class="bold-subtitle">Data:<p> <p class='simpleText'><?php echo $content['field_event_date'][0]['#markup']; ?></p>
-        <p class="bold-subtitle">Locatie:<p><p class='simpleText'><?php echo $content['field_location']['#items'][0]['name']; ?></p>
-        <a href='#'><div class='butonJoin'><?php print render($content['links']['flag']); ?></div></a>
+
 
         <p class="bold-subtitle">Despre:</p>
         <p class='simpleText'><?php print render($content['body']); ?></p>
@@ -113,20 +118,45 @@ if ($users) {
         <?php if (!empty($users)): ?>
         <p class="bold-subtitle">Participanti</p>
             <?php foreach ($users as $user): ?>
-                <?php if (!empty($user['entity']->field_poza)): ?>
-                    <img src="<?php print file_create_url($user['entity']->field_poza['und'][0]['uri']); ?>" />
-                <?php else: ?>
-                    <img style="height: 50px; width: auto; display: inline-block;" src="<?php global $base_url; print $base_url;?>/sites/all/themes/events/images/default-batman.jpg" />
-                <?php endif; ?>
+                <?php $userName = $user['entity']->name; ?>
+                <a href="<?php echo $base_url . '/user/' . $userName; ?>" title="<?php echo $userName;?>">
+                    <?php if (!empty($user['entity']->field_poza)): ?>
+                        <img style="height: 69px; width: auto; display: inline-block;" src="<?php print file_create_url($user['entity']->field_poza['und'][0]['uri']); ?>" />
+                    <?php else: ?>
+                        <img style="height: 69px; width: auto; display: inline-block;" src="<?php print $base_url;?>/sites/all/themes/events/images/default-batman.jpg" />
+                    <?php endif; ?>
+                </a>
             <?php endforeach; ?>
         <?php endif; ?>
-        <?php $categorii = getStatistics($muzicaString, $sportString); ?>
+        <a href='#'><div class='butonJoin'><?php print render($content['links']['flag']); ?></div></a>
+        <?php $categorii = getStatistics($muzicaString, $sportString); $categoriesData = ''; $data = ''; ?>
         <?php if (!empty($categorii)): ?>
-            <p class="bold-subtitle">Interese: </p>
             <?php foreach ($categorii as $label => $value): ?>
-                <p class='simpleText'><?php echo round($value/$totalUseri*100); ?>% <?php echo $label; ?><p>
+            <?php $categoriesData .= "'" . $label . "'" . ', '; $data .= round($value/$totalUseri*100). ', ';  ?>
             <?php endforeach; ?>
+            <div id="chartLocatie" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
         <?php endif; ?>
+        <p class="bold-subtitle">Locatie:<p><p class='simpleText'><?php echo $content['field_location']['#items'][0]['name']; ?></p>
         <p class="bold-subtitle"><?php print render($content['field_location']); ?></p>
     </div>
 </div>
+<script type="text/javascript" charset="utf-8">
+jQuery('#chartLocatie').highcharts({
+    chart: {
+        type: 'column'
+    },
+    title: {
+        text: 'Top interese participanti (%):'
+    },
+    xAxis: {
+        categories: [<?php echo $categoriesData; ?>]
+    },
+    credits: {
+        enabled: true
+    },
+    series: [{
+            name: 'Interese',
+            data: [<?php echo $data; ?>]
+        }]
+});
+</script>
