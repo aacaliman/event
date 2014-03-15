@@ -1,6 +1,22 @@
-body{
+@font-face {
+    font-family: 'Lobster Two';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Lobster Two'), local('LobsterTwo'), url(http://themes.googleusercontent.com/static/fonts/lobstertwo/v5/Law3VVulBOoxyKPkrNsAaIbN6UDyHWBl620a-IRfuBk.woff) format('woff');
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Open Sans'), local('OpenSans'), url(http://themes.googleusercontent.com/static/fonts/opensans/v8/cJZKeOuBrn4kERxqtaUH3T8E0i7KZn-EPnyo3HZu7kw.woff) format('woff');
+}
+
+
+html, body{
     height: 100%;
     width: 100%;
+    background: #fff;
 }
 a{
     text-decoration: none;
@@ -53,10 +69,13 @@ a{
     text-decoration: none;
 }
 
-.bold{
+.bold a {
     font-weight: bold;
     font-size: 20px;
     padding: 15px 0;
+    font-family: 'Open Sans';
+    color: #000;
+    display: inline-block;
 }
 .logoText{
     font-family: 'Lobster Two';
@@ -107,9 +126,11 @@ a{
     width: 100%;
     float: left;
 }
-.small{
+
+.small p{
     width: 50%;
     margin: 0 auto;
+    display: inline-block;
 }
 
 .event img{
@@ -269,6 +290,7 @@ form.go-right input:focus + label, form.go-right textarea:focus + label {
 }
 .col1 img{
     width: 90%;
+    height: auto;
 }
 .col2{
     width: 45%;
