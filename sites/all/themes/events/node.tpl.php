@@ -77,79 +77,49 @@
  * @see template_process()
  */
 include_once('functions.php');
+$muzicaString = '';
+$sportString = '';
+
+$users = $node->field_event_user['und'];
+$totalUseri = count($users);
+
+$field_muzica = field_get_items('user', $users[0]['entity'],'field_muzica');
+if (!empty($field_muzica)) {
+    foreach ($field_muzica as $fieldArray) {
+        $muzicaString .= $fieldArray['value'] . ',';
+    }
+}
+if (!empty($field_sport)) {
+    $field_sport = field_get_items('user', $users[0]['entity'], 'field_sport');
+    foreach ($field_sport as $fieldArray) {
+        $sportString .= $fieldArray['value'] . ',';
+    }
+}
 ?>
-<div class="col1">
-    <div class="imagine-eveniment"><?php print render($content['field_picture']); ?></div>
-</div>
+<div class="wrapper2">
+    <div class='col1'><?php print render($content['field_picture']); ?></div>
+    <div class='col2'>
+        <p class='bold-title'><a href="<?php print $node_url; ?>"><?php print $title; ?></a></p>
+        <p class="bold-subtitle">Organizat de:<p> <p class='simpleText'><?php echo $name; ?></p>
+        <p class="bold-subtitle">Data:<p> <p class='simpleText'><?php echo $content['field_event_date'][0]['#markup']; ?></p>
+        <p class="bold-subtitle">Locatie:<p><p class='simpleText'><?php echo $content['field_location']['#items'][0]['name']; ?></p>
+        <a href='#'><div class='butonJoin'><?php print render($content['links']['flag']); ?></div></a>
 
-<div class="col2">
-    <div class="titlu-eveniment">
-        <h2<?php print $title_attributes; ?>>
-            <a href="<?php print $node_url; ?>"><?php print $title; ?></a>
-        </h2>
+        <p class="bold-subtitle">Despre:</p>
+        <p class='simpleText'><?php print render($content['body']); ?></p>
     </div>
-    <table>
-        <tr>
-            <td>Organizat de: </td>
-            <td><div class="organizat-de"><?php echo $name; ?></div></td>
-        </tr>
-        <tr>
-            <td>Data / Ora: </td>
-            <td><div class="data-eveniment"><?php echo $content['field_event_date'][0]['#markup']; ?></div></td>
-        </tr>
-        <tr>
-            <td>Locatie: </td>
-            <td><div class="locatie-eveniment"><?php echo $content['field_location']['#items'][0]['name']; ?></div></td>
-        </tr>
-    </table>
-    <?php print render($content['links']); ?>
-</div>
-<div class="col3">
-    <div class="participanti">
-        <?php
-        $muzicaString = '';
-        $sportString = '';
-
-        $users = $node->field_event_user['und'];
-        $totalUseri = count($users);
-
-        $field_muzica = field_get_items('user', $users[0]['entity'],'field_muzica');
-        foreach ($field_muzica as $fieldArray) {
-            $muzicaString .= $fieldArray['value'] . ',';
-        }
-
-        $field_sport = field_get_items('user', $users[0]['entity'],'field_sport');
-        foreach ($field_sport as $fieldArray) {
-            $sportString .= $fieldArray['value'] . ',';
-        }
-        ?>
-        <h3>Participanti</h3>
-
-        <div class="poze-participanti">
-            <?php foreach ($users as $user): ?>
-                <?php if (!empty($user['entity']->field_poza)): ?>
-                <div class="poza-user">
-                    <img width="60" src="<?php print file_create_url($user['entity']->field_poza['und'][0]['uri']); ?>" />
-                </div>
-                <?php endif; ?>
-            <?php endforeach; ?>
-
-        </div>
-
-        <div class="interese-comune">
-            <h3>Interese Comune</h3>
-            <?php $categorii = getStatistics($muzicaString, $sportString); ?>
-            <p>Interese:</p>
-            <table>
-                <?php foreach ($categorii as $label => $value): ?>
-                <tr>
-                    <td><?php echo round($value/$totalUseri*100); ?>% <?php echo $label; ?></td>
-                </tr>
-                <?php endforeach; ?>
-            </table>
-        </div>
-    </div>
-    <div class="locatie-eveniment">
-        <?php print render($content['field_location']); ?>
+    <div class='col3'>
+        <p class="bold-subtitle">Participanti</p>
+        <?php foreach ($users as $user): ?>
+            <?php if (!empty($user['entity']->field_poza)): ?>
+                <img src="<?php print file_create_url($user['entity']->field_poza['und'][0]['uri']); ?>" />
+            <?php endif; ?>
+        <?php endforeach; ?>
+        <p class="bold-subtitle">Interese: </p>
+        <?php $categorii = getStatistics($muzicaString, $sportString); ?>
+        <?php foreach ($categorii as $label => $value): ?>
+            <p class='simpleText'><?php echo round($value/$totalUseri*100); ?>% <?php echo $label; ?><p>
+        <?php endforeach; ?>
+        <p class="bold-subtitle"><?php print render($content['field_location']); ?></p>
     </div>
 </div>
