@@ -80,7 +80,7 @@ include_once('functions.php');
 $muzicaString = '';
 $sportString = '';
 
-$users = $node->field_event_user['und'];
+$users = ($node->field_event_user['und']) ? $node->field_event_user['und'] : '';
 $totalUseri = count($users);
 
 $field_muzica = field_get_items('user', $users[0]['entity'],'field_muzica');
@@ -109,12 +109,14 @@ if (!empty($field_sport)) {
         <p class='simpleText'><?php print render($content['body']); ?></p>
     </div>
     <div class='col3'>
+        <?php if (!empty($users)): ?>
         <p class="bold-subtitle">Participanti</p>
-        <?php foreach ($users as $user): ?>
-            <?php if (!empty($user['entity']->field_poza)): ?>
-                <img src="<?php print file_create_url($user['entity']->field_poza['und'][0]['uri']); ?>" />
-            <?php endif; ?>
-        <?php endforeach; ?>
+            <?php foreach ($users as $user): ?>
+                <?php if (!empty($user['entity']->field_poza)): ?>
+                    <img src="<?php print file_create_url($user['entity']->field_poza['und'][0]['uri']); ?>" />
+                <?php endif; ?>
+            <?php endforeach; ?>
+        <?php endif; ?>
         <?php $categorii = getStatistics($muzicaString, $sportString); ?>
         <?php if (!empty($categorii)): ?>
             <p class="bold-subtitle">Interese: </p>
