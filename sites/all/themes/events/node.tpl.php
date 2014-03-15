@@ -116,7 +116,7 @@ if ($users) {
                 <?php if (!empty($user['entity']->field_poza)): ?>
                     <img src="<?php print file_create_url($user['entity']->field_poza['und'][0]['uri']); ?>" />
                 <?php else: ?>
-                    <img src="images/default-batman.jpg" />
+                    <img style="height: 50px; width: auto; display: inline-block;" src="<?php global $base_url; print $base_url;?>/sites/all/themes/events/images/default-batman.jpg" />
                 <?php endif; ?>
             <?php endforeach; ?>
         <?php endif; ?>

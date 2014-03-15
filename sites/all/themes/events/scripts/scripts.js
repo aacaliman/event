@@ -187,7 +187,7 @@ jQuery('.user-container ul li:odd').addClass('odd');
 ------------------------------------------------------*/
 	//jQuery('#file1').customFileInput();	
 
-jQuery(".colrboxitem").colorbox({rel:'colrboxitem', transition:"fade"});
+//jQuery(".colrboxitem").colorbox({rel:'colrboxitem', transition:"fade"});
 
 
 }); // end of ready
