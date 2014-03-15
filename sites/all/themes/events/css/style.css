@@ -365,6 +365,53 @@ form.go-right input:focus + label, form.go-right textarea:focus + label {
     margin: 0 auto;
 }
 
+.views-exposed-form .views-exposed-widget {
+    width: 100%;
+}
+
+#edit-field-category-value-wrapper label {
+    display: none;
+}
+
+.front.not-logged-in #main-wrapper {
+    min-width: 100%;
+}
+
+#block-system-main-menu {
+    background: none repeat scroll 0 0 black;
+    border-bottom: 3px solid black;
+    color: #FFFFFF;
+    height: 82px;
+    position: relative;
+    width: 100%;
+    z-index: 6;
+}
+
+#block-system-main-menu .content  {
+    float: right;
+    width: 46%;
+}
+#block-system-main-menu .content li {
+    display: inline-block;
+    margin: 50px 0 0;
+    padding: 0 50px 0 0;
+}
+
+#block-system-main-menu .content li a {
+    font-family: 'Lobster Two';
+    color: #fff;
+    font-size: 18px;
+}
+
+.view-filters form {
+    width: 100%;
+    margin: 50px 0 0 ;
+}
+
+.view-filters form > div {
+    margin-bottom: 0;
+}
+
 @media (max-width: 1260px) {
     .event{
         width: 100%;
@@ -385,21 +432,22 @@ form.go-right input:focus + label, form.go-right textarea:focus + label {
     .icon{
         display: block;
     }
-    .menuOptions ul{
+   #block-system-main-menu .content  ul{
         display: block;
         margin: 0 auto;
         right: 0;
         width: 100%;
     }
-    .menuOptions ul li{
+    #block-system-main-menu .content  ul li{
         display: block;
         padding: 10px 50px 10px 0;
     }
 
-    .menuOptions ul li:hover{
+    #block-system-main-menu .content  ul li:hover{
         background: #171717;
     }
-    .menuOptions{
+    
+    #block-system-main-menu .content {
         background: none repeat scroll 0 0 #000000;
         opacity: .9;
         float: right;

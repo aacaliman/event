@@ -11,7 +11,7 @@
             <?php if ($show_messages && $messages): ?>
                 <div class="system-messages"><?php print $messages; ?></div>
             <?php endif; ?>
-                asd
+                
             <?php print render($page['content']); ?>
         </div><!-- /.#content-->
     </div><!-- /#main-wrapper-->

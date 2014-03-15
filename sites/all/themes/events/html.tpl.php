@@ -50,7 +50,7 @@
         <link rel="shortcut icon" href="favicon.ico">
     </head>
 
-    <body>
+    <body class="<?php print $classes; ?>">
         <div id="page-wrapper">
             <?php print $page ?>
         </div><!-- /#page-wrapper-->

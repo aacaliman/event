@@ -43,9 +43,34 @@ if ($user->uid) {
 
         <?php } ?>
     <?php endforeach; ?>
+    <?php } else {
+    ?>
+    <div class="wrapper">  
+        <div class="background-img"></div>
+        <div class="overlayHome">
+            <div class="row1"><p class="logoText">Urban Adventure</p></div>
+            <div class="row2"><p>Iesi din casa, vino cu noi la evenimente si propune-ne 
+                    ceva nou. Plimbari cu bicicleta, iesiri la picnic si multe
+                    altele. Lasa-ti grijile, lasa-ti calculatorul si nervii si vino 
+                    in natura! Say yas to a new adventure!!  </p>
+            </div>
+            <div class="row3">
+                <form class="go-right">
+
+                    <div>
+                        <input type="text" required="" name="name" id="name">
+                        <label for="name">Numele tau</label>
+                    </div>
+                    <div>
+                        <input type="tel" required="" name="phone" id="phone">
+                        <label for="phone">Adresa email</label>
+                    </div>
+                </form>
+                <a class="butonCont" href="#"><img src="<?php  print base_path() . path_to_theme();?>/images/buton2.png"></a>
+            </div>
+        </div>
+    </div>
     <?php
-} else {
-    
 }
 ?>
 
