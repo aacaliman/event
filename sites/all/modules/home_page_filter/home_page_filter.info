@@ -1,0 +1,11 @@
+name = Home page filter
+core = 7.x
+package = Features
+version = 7.x-1.0
+project = home_page_filter
+dependencies[] = nodequeue
+dependencies[] = views
+features[ctools][] = views:views_default:3.0
+features[features_api][] = api:2
+features[views_view][] = front_page_view
+features_exclude[dependencies][ctools] = ctools

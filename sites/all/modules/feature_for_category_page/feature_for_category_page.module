@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Feature for category page feature.
+ */
+
+include_once 'feature_for_category_page.features.inc';
