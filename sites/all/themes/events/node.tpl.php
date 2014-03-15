@@ -115,11 +115,13 @@ if (!empty($field_sport)) {
                 <img src="<?php print file_create_url($user['entity']->field_poza['und'][0]['uri']); ?>" />
             <?php endif; ?>
         <?php endforeach; ?>
-        <p class="bold-subtitle">Interese: </p>
         <?php $categorii = getStatistics($muzicaString, $sportString); ?>
-        <?php foreach ($categorii as $label => $value): ?>
-            <p class='simpleText'><?php echo round($value/$totalUseri*100); ?>% <?php echo $label; ?><p>
-        <?php endforeach; ?>
+        <?php if (!empty($categorii)): ?>
+            <p class="bold-subtitle">Interese: </p>
+            <?php foreach ($categorii as $label => $value): ?>
+                <p class='simpleText'><?php echo round($value/$totalUseri*100); ?>% <?php echo $label; ?><p>
+            <?php endforeach; ?>
+        <?php endif; ?>
         <p class="bold-subtitle"><?php print render($content['field_location']); ?></p>
     </div>
 </div>
