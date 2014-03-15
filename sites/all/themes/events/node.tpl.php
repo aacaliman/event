@@ -119,7 +119,7 @@ if ($users) {
         <p class="bold-subtitle">Participanti</p>
             <?php foreach ($users as $user): ?>
                 <?php $userName = $user['entity']->name; ?>
-                <a href="<?php echo $base_url . '/user/' . $userName; ?>" title="<?php echo $userName;?>">
+                <a href="<?php echo $base_url . '/users/' . $userName; ?>" title="<?php echo $userName;?>">
                     <?php if (!empty($user['entity']->field_poza)): ?>
                         <img style="height: 69px; width: auto; display: inline-block;" src="<?php print file_create_url($user['entity']->field_poza['und'][0]['uri']); ?>" />
                     <?php else: ?>
