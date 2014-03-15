@@ -3,7 +3,9 @@ include_once('functions.php');
 $muzicaString = '';
 $sportString = '';
 // pentru testare, scurtam array-ul la 10 elemente
-$users = array_slice($rows, 0, 10); ?>
+$users = array_slice($rows, 0, 10);
+$totalUseri = count($users);
+?>
 
 <h3>Participanti</h3>
 
@@ -23,11 +25,11 @@ $users = array_slice($rows, 0, 10); ?>
 <div class="interese-comune">
     <h3>Interese Comune</h3>
     <?php $categorii = getStatistics($muzicaString, $sportString); ?>
-    <p>Din <?php echo count($users); ?> persoane care participa:</p>
+    <p>Interese:</p>
     <table>
         <?php foreach ($categorii as $label => $value): ?>
         <tr>
-            <td><strong><?php echo $value; ?></strong> sunt interesati de <strong><?php echo $label; ?></strong></td>
+            <td><?php echo round($value/$totalUseri*100); ?>% <?php echo $label; ?></td>
         </tr>
         <?php endforeach; ?>
     </table>
