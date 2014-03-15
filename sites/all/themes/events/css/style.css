@@ -98,7 +98,7 @@ a{
     padding: 5% 0;
     text-align: center;
     width: 45%;
-    float: left;
+    display: inline-block;
     height: 50%;
 }
 .eventBig{
@@ -113,8 +113,11 @@ a{
 }
 
 .event img{
-    height: 500px;
+    height: auto;
     margin: 0 auto;
+    max-height: 500px;
+    max-width: 90%;
+    width: auto;
 }
 
 .eventBig img{
@@ -123,7 +126,9 @@ a{
 
 .row {
     width: 100%;
+    text-align: center;
 }
+
 .icon{
     position: absolute;
     right: 10%;
@@ -376,6 +381,11 @@ form.go-right input:focus + label, form.go-right textarea:focus + label {
 }
 
 @media (max-width: 900px) {
+
+    .event {
+        height: auto;
+    }
+
     .overlayHome{
         width: 100%;
         height: 95%;
