@@ -80,19 +80,20 @@ include_once('functions.php');
 $muzicaString = '';
 $sportString = '';
 
-$users = ($node->field_event_user['und']) ? $node->field_event_user['und'] : '';
+$users = isset($node->field_event_user['und']) ? $node->field_event_user['und'] : '';
 $totalUseri = count($users);
-
-$field_muzica = field_get_items('user', $users[0]['entity'],'field_muzica');
-if (!empty($field_muzica)) {
-    foreach ($field_muzica as $fieldArray) {
-        $muzicaString .= $fieldArray['value'] . ',';
+if ($users) {
+    $field_muzica = field_get_items('user', $users[0]['entity'], 'field_muzica');
+    if (!empty($field_muzica)) {
+        foreach ($field_muzica as $fieldArray) {
+            $muzicaString .= $fieldArray['value'] . ',';
+        }
     }
-}
-if (!empty($field_sport)) {
-    $field_sport = field_get_items('user', $users[0]['entity'], 'field_sport');
-    foreach ($field_sport as $fieldArray) {
-        $sportString .= $fieldArray['value'] . ',';
+    if (!empty($field_sport)) {
+        $field_sport = field_get_items('user', $users[0]['entity'], 'field_sport');
+        foreach ($field_sport as $fieldArray) {
+            $sportString .= $fieldArray['value'] . ',';
+        }
     }
 }
 ?>
@@ -114,6 +115,8 @@ if (!empty($field_sport)) {
             <?php foreach ($users as $user): ?>
                 <?php if (!empty($user['entity']->field_poza)): ?>
                     <img src="<?php print file_create_url($user['entity']->field_poza['und'][0]['uri']); ?>" />
+                <?php else: ?>
+                    <img src="images/default-batman.jpg" />
                 <?php endif; ?>
             <?php endforeach; ?>
         <?php endif; ?>
