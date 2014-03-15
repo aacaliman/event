@@ -1,22 +1,9 @@
-@font-face {
-    font-family: 'Lobster_Two';
-    font-style: normal;
-    font-weight: 400;
-    src: local('Lobster_Two'), local('LobsterTwo'), url(http://themes.googleusercontent.com/static/fonts/lobstertwo/v5/Law3VVulBOoxyKPkrNsAaIbN6UDyHWBl620a-IRfuBk.woff) format('woff');
-}
-
-
-@font-face {
-    font-family: 'Open_Sans';
-    font-style: normal;
-    font-weight: 400;
-    src: local('Open_Sans'), local('OpenSans'), url(http://themes.googleusercontent.com/static/fonts/opensans/v8/cJZKeOuBrn4kERxqtaUH3T8E0i7KZn-EPnyo3HZu7kw.woff) format('woff');
-}
-
-html, body{
+body{
     height: 100%;
     width: 100%;
-    background: #fff;
+}
+a{
+    text-decoration: none;
 }
 
 .menu{
@@ -30,7 +17,7 @@ html, body{
 }
 
 .logo{
-    font-family: 'Lobster_Two';
+    font-family: 'Lobster Two';
     font-size: 50px;
     font-weight: 900;
     padding: 25px 0 5px  13%;
@@ -38,12 +25,12 @@ html, body{
     float: left;
 }
 .wrapper{
-    font-family: 'Open_Sans';
+    font-family: 'Open Sans';
     font-size: 13px;
 }
 
 .menuOptions ul{
-    font-family: 'Lobster_Two';
+    font-family: 'Lobster Two';
     font-size: 18px;
     font-weight: bold;
     list-style: none outside none;
@@ -66,17 +53,13 @@ html, body{
     text-decoration: none;
 }
 
-.bold a {
+.bold{
     font-weight: bold;
     font-size: 20px;
     padding: 15px 0;
-    display: inline-block;
-    font-family: 'Open_Sans';
-    color: #000;
-    text-decoration: none;
 }
 .logoText{
-    font-family: 'Lobster_Two';
+    font-family: 'Lobster Two';
     font-size: 28px;
     font-weight: bold;
     padding-top: 3%;
@@ -102,7 +85,7 @@ html, body{
 }
 
 .row2 {
-    font-family: 'Open_Sans';
+    font-family: 'Open Sans';
     font-size: 12px;
     height: 30%;
     left: 19%;
@@ -118,25 +101,15 @@ html, body{
     float: left;
     height: 50%;
 }
-
-.event p,
-.event div {
-    float: left;
-    width: 100%;
-}
-
 .eventBig{
     padding: 5% 0;
     text-align: center;
     width: 100%;
     float: left;
 }
-.small p {
+.small{
     width: 50%;
     margin: 0 auto;
-    display: inline-block;
-    float: none;
-    color: #333;
 }
 
 .event img{
@@ -277,15 +250,85 @@ form.go-right input:focus + label, form.go-right textarea:focus + label {
     width: 40%;
     padding-top: 5px;
 }
+.wrapper2{
+    height: 100%;
+    padding: 0;
+    position: relative;
+    width: 96%;
+    margin: 4%;
+}
+.col1{
+    width: 25%;
+    height: 100%;
+    float: left;
+}
+.col1 img{
+    width: 90%;
+}
+.col2{
+    width: 45%;
+    height: 100%;
+    float: left;
+    margin-right: 5%;
+}
+.col3{
+    width: 20%;
+    height: 100%;
+    float: left;
+}
+
+.col3 img{
+    width: 100%;
+}
+
+.bold-title{
+    font-size: 45px;
+    font-weight: bold;
+    font-family: 'Lobster Two';
+    padding-bottom: 10px;
+}
+
+.bold-subtitle{
+    font-size: 22px;
+    font-weight: bold;
+    font-family: 'Lobster Two';
+    line-height: 40px;
+
+}
+
+.simpleText{
+    font-family: 'Open Sans';
+    font-size: 14px;
+    line-height: 20px;
+}
+.butonJoin{
+    margin: 5% 0 10%;
+    background: #2a79c1;
+    width: 250px;
+    height: 50px;
+    border-radius: 10px;
+    font-family: 'Lobster Two';
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+    color: #fff;
+    line-height: 50px;
+    -webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,.5), inset 0 -2px 0 rgba(0,0,0,.25), inset 0 -3px 0 rgba(255,255,255,.2), 0 1px 0 rgba(0,0,0,.1);
+    -moz-box-shadow: inset 0 1px 0 rgba(255,255,255,.5), inset 0 -2px 0 rgba(0,0,0,.25), inset 0 -3px 0 rgba(255,255,255,.2), 0 1px 0 rgba(0,0,0,.1);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.5), inset 0 -2px 0 rgba(0,0,0,.25), inset 0 -3px 0 rgba(255,255,255,.2), 0 1px 0 rgba(0,0,0,.1);
+}
 
 
+.push{
+    background: #266dae;
+}
 /* Media Queries*/
 
 
 @media (max-width: 1260px) {
     .event{
         width: 100%;
-    }  
+    }
     .row2 p{
         display: none;
     }
@@ -330,11 +373,9 @@ form.go-right input:focus + label, form.go-right textarea:focus + label {
     .logoText{
         padding-top: 10%;
     }
+}
 
-    .event {
-        height: auto;
-    }
-    
+@media (max-width: 900px) {
     .overlayHome{
         width: 100%;
         height: 95%;
@@ -347,3 +388,9 @@ form.go-right input:focus + label, form.go-right textarea:focus + label {
 
 }
 
+@media (max-width: 760px) {
+    .col1, .col2, .col3{
+        width: 100%;
+        position: relative;
+    }
+}
