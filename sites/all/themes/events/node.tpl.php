@@ -82,6 +82,7 @@
 <div class="col1">
     <div class="imagine-eveniment"><?php print render($content['field_picture']); ?></div>
 </div>
+
 <div class="col2">
     <div class="titlu-eveniment">
         <h2<?php print $title_attributes; ?>>
@@ -102,6 +103,7 @@
             <td><div class="locatie-eveniment"><?php echo $content['field_location']['#items'][0]['name']; ?></div></td>
         </tr>
     </table>
+    <?php print render($content['links']); ?>
 </div>
 <div class="col3">
     <div class="participanti">
