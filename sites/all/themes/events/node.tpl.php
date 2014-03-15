@@ -76,8 +76,7 @@
  * @see template_preprocess_node()
  * @see template_process()
  */
-//dsm($content);
-//echo $node->body['und']['0']['value'];
+include_once('functions.php');
 ?>
 <div class="col1">
     <div class="imagine-eveniment"><?php print render($content['field_picture']); ?></div>
@@ -107,8 +106,48 @@
 </div>
 <div class="col3">
     <div class="participanti">
-<?php $rightSidebar = views_embed_view('participants', 'block');
-print $rightSidebar; ?>
+        <?php
+        $muzicaString = '';
+        $sportString = '';
+
+        $users = $node->field_event_user['und'];
+        $totalUseri = count($users);
+
+        $field_muzica = field_get_items('user', $users[0]['entity'],'field_muzica');
+        foreach ($field_muzica as $fieldArray) {
+            $muzicaString .= $fieldArray['value'] . ',';
+        }
+
+        $field_sport = field_get_items('user', $users[0]['entity'],'field_sport');
+        foreach ($field_sport as $fieldArray) {
+            $sportString .= $fieldArray['value'] . ',';
+        }
+        ?>
+        <h3>Participanti</h3>
+
+        <div class="poze-participanti">
+            <?php foreach ($users as $user): ?>
+                <?php if (!empty($user['entity']->field_poza)): ?>
+                <div class="poza-user">
+                    <img width="60" src="<?php print file_create_url($user['entity']->field_poza['und'][0]['uri']); ?>" />
+                </div>
+                <?php endif; ?>
+            <?php endforeach; ?>
+
+        </div>
+
+        <div class="interese-comune">
+            <h3>Interese Comune</h3>
+            <?php $categorii = getStatistics($muzicaString, $sportString); ?>
+            <p>Interese:</p>
+            <table>
+                <?php foreach ($categorii as $label => $value): ?>
+                <tr>
+                    <td><?php echo round($value/$totalUseri*100); ?>% <?php echo $label; ?></td>
+                </tr>
+                <?php endforeach; ?>
+            </table>
+        </div>
     </div>
     <div class="locatie-eveniment">
         <?php print render($content['field_location']); ?>
